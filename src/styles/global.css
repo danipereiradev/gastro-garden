@@ -6,8 +6,8 @@
 @import 'tailwindcss';
 
 :root {
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
+  --accent: green;
+  --accent-dark: rgb(3, 97, 3);
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
@@ -35,7 +35,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  background: white;
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -43,12 +43,7 @@ body {
   font-size: 20px;
   line-height: 1.7;
 }
-main {
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
-}
+
 h1,
 h2,
 h3,
@@ -100,11 +95,7 @@ input {
 table {
   width: 100%;
 }
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+
 code {
   padding: 2px 5px;
   background-color: rgb(var(--gray-light));
