@@ -1,24 +1,25 @@
 ---
 const today = new Date();
+import Button from './Button.astro';
 ---
 
 <!-- <footer class="flex justify-center align-center bg-black text-white">
   &copy; {today.getFullYear()} Gastro Garden | Todos los derechos reservados.
 </footer> -->
 <footer class="bg-mint text-garden-drygreen mt-12 py-12">
-  <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-8 md:grid-cols-3">
+  <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-8 md:grid-cols-3 justify-center items-center text-center">
     <!-- Columna 1: Logo y descripción -->
-    <div>
-      <img class="mb-4" width={150} height={200} src={'/gastro-garden-logo.png'} alt="" />
+    <div class='flex flex-col items-center justify-center px-8'>
+      <img class="mb-4" width={100} src={'/gastro-garden-logo.png'} alt="" />
       <p class="text-sm leading-relaxed">
         Cultiva tu bienestar. Cursos, ideas y productos para acercarte a la tierra desde casa.
       </p>
     </div>
 
     <!-- Columna 2: Enlaces -->
-    <div>
+    <div class='px-8'>
       <h3 class="mb-3 text-lg font-semibold">Enlaces</h3>
-      <ul class="space-y-2 text-sm">
+      <ul class="space-y-2 text-xl">
         <li><a href="/" class="hover:underline">Inicio</a></li>
         <li><a href="/cursos" class="hover:underline">Cursos</a></li>
         <li><a href="/blog" class="hover:underline">Blog</a></li>
@@ -28,24 +29,21 @@ const today = new Date();
     </div>
 
     <!-- Columna 3: Newsletter -->
-    <div>
+    <div class='px-8'>
       <h3 class="mb-3 text-lg font-semibold">Newsletter</h3>
       <p class="mb-4 text-sm">Recibe consejos, novedades y semillas de inspiración 🌱</p>
       <form class="flex flex-col gap-2 sm:flex-row">
         <input
           type="email"
           placeholder="Tu email"
-          class="w-full flex-1 rounded-md px-3 py-2 text-black sm:w-auto"
+          class="w-full flex-1 rounded-md px-3 py-2 text-black sm:w-auto bg-white text-center"
         />
-        <button
-          class="bg-garden-mint hover:bg-garden-drygreen rounded-md px-4 py-2 text-black transition"
-        >
-          Suscribirme
-        </button>
+        <button class='bg-hoja mx-auto text-white px-4 py-2 rounded-full'>Suscribirse!</button>
       </form>
     </div>
   </div>
 </footer>
-<div class="align-center flex justify-center bg-black text-white">
-  &copy; {today.getFullYear()} Gastro Garden | Todos los derechos reservados.
+<div class="text-center text-sm flex items-center justify-center bg-black text-white p-4 gap-4">
+  <div>&copy; {today.getFullYear()} Gastro Garden | Todos los derechos reservados</div>
+  <a href="https://danipereira.es" target='_blank'><img src="/offtrack-footer-logo.png" alt="offtrack webs logo" width={100} class='place-self-center '></a>
 </div>
