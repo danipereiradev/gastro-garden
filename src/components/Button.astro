@@ -1,0 +1,9 @@
+---
+const { buttonText, customClass } = Astro.props;
+---
+
+<button
+  type="button"
+  class=`z-5 hover:scale-105 transition-transform duration-300  w-[145px] md:w-[165px]  cursor-pointer bg-hoja text-white bold focus:outline-none focus:ring-4 font-medium rounded-full text-xl md:text-2xl px-5 py-2.5 text-center me-2 mb-2 ${customClass}`
+  >{buttonText}</button
+>

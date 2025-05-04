@@ -5,10 +5,20 @@
  */
 @import 'tailwindcss';
 
+@theme {
+  --color-mint: #b8d8ba;
+  --color-hoja: #6da758;
+  --color-vanilla: #fff3b0;
+  --color-rose: #f4c2c2;
+  --color-clay: #eaddc4;
+  --color-drygreen: #a2c2a2;
+  --color-tierra: #5e4b3c;
+}
+
 :root {
-  --accent: green;
+  --accent: #5e4b3c;
   --accent-dark: rgb(3, 97, 3);
-  --black: 15, 18, 25;
+  --black: #5e4b3c;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
@@ -45,31 +55,6 @@ body {
   line-height: 1.7;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
-  line-height: 1.2;
-}
-h1 {
-  font-size: 3.052em;
-}
-h2 {
-  font-size: 2.441em;
-}
-h3 {
-  font-size: 1.953em;
-}
-h4 {
-  font-size: 1.563em;
-}
-h5 {
-  font-size: 1.25em;
-}
 strong,
 b {
   font-weight: 700;

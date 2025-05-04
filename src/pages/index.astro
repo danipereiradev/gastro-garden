@@ -3,7 +3,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Cards from '../components/Cards.astro';
+import Button from '../components/Button.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import HeroBanner from '../components/HeroBanner.astro';
 ---
 
 <!doctype html>
@@ -13,39 +15,75 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   </head>
   <body>
     <Header />
-    <main class="p-12">
-      <section
-        class="w-full h-[calc(100vh_-_121px)] flex sm-flex-row justify-center items-center relative"
-      >
-        <div class="w-1/2 flex flex-col justify-center align-center text-left p-8">
-          <h1>Cultiva tu mundo. <br />Aprende a sembrar vida con nosotros.</h1>
 
-          <p class="text-2xl">
-            Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-            template serves as a lightweight, minimally-styled starting point for anyone looking to build
-            a personal website, blog, or portfolio with Astro.
-            <p class="text-2xl">
-              Welcome to the official blog starter template. This template serves as a lightweight
-            </p>
-          </p><button
-            type="button"
-            class="w-32 cursor-pointer text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-            >Descubre más</button
-          >
-        </div>
+    <!-- TODO: CREAR COMPONENTE HERO BANNER -->
+    <section
+      class="bg-mint relative flex h-[calc(100vh_-_121px)] w-full flex-col items-center justify-center md:flex-row"
+    >
+      <div class="align-center flex w-full flex-col justify-center p-8 text-center md:text-left md:px-24">
+        <h1 class="text-3xl md:text-4xl mb-4">Cultiva tu mundo. <br />Aprende a sembrar vida con nosotros.</h1>
 
-        <div class='w-1/2 bg-[url("/guy-gardening.jpg")] bg-cover bg-center h-full'></div>
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg class="relative block w-full h-32" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path
-              fill="#ffffff"
-              d="M0,160 C120,200 240,120 360,160 C480,200 600,280 720,240 C840,200 960,120 1080,160 C1200,200 1320,280 1440,240 V320 H0 Z"
-            ></path>
-          </svg>
-        </div>
-      </section>
-    </main>
-    <Cards />
+        <p class="text-base">
+          Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
+          template serves as a lightweight, minimally-styled starting point for anyone looking to build
+          a personal website, blog, or portfolio with Astro.
+          <p class="text-base">
+            Welcome to the official blog starter template. This template serves as a lightweight
+          </p>
+        </p><Button buttonText="Ver más" customClass="place-self-center md:place-self-start" />
+      </div>
+
+      <div class='h-full w-full bg-[url("/guy-gardening.jpg")] bg-cover bg-center'></div>
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg class="relative block h-32 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#ffffff"
+            d="M0,160 C120,200 240,120 360,160 C480,200 600,280 720,240 C840,200 960,120 1080,160 C1200,200 1320,280 1440,240 V320 H0 Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <section
+      class="flex flex-col-reverse text-center min-h-screen md:flex-row md:px-24 p-8 md:p-0"
+    >
+      <div class="w-full flex md:h-1/2 md:w-1/2 justify-center mt-8">
+        <img class="object-cover" src="/quienes-somos.png" alt="Una foto de un huerto" />
+      </div>
+      <div class="flex  w-full md:w-1/2 flex-col justify-center items-center md:text-start md:items-start">
+        <h3 class="text-3xl md:text-4xl mb-4 " >¿Quienes sómos?</h3>
+        <p class='text-base'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In quisquam explicabo dicta
+          praesentium dolor odit recusandae animi dolorum voluptas voluptates nesciunt natus
+          suscipit repellendus mollitia ex accusamus dignissimos, ducimus fugiat. Cumque, eum? Animi
+          laboriosam nostrum error repellendus totam neque quam nesciunt, vel pariatur, tenetur non
+          ex similique temporibus rerum praesentium. <br /><br />Unde autem est ducimus, facilis
+          inventore sunt ipsa nesciunt tenetur. Quae mollitia, impedit atque doloremque beatae ullam
+          nesciunt error, molestias necessitatibus.
+        </p>
+        <p class='text-base'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In quisquam explicabo dicta
+          praesentium dolor odit recusandae animi dolorum voluptas voluptates nesciunt natus
+          suscipit repellendus mollitia ex accusamus dignissimos.</p>
+        <Button buttonText="Leer más" customClass="place-self-center md:place-self-start" />
+      </div>
+    </section>
+
+    <Cards
+      title="Nuestros cursos y servicios"
+      description="Cursos prácticos para que empieces tu huerto desde cero — en casa, en el balcón o en tu comunidad."
+      type="servicios"
+    />
+    <HeroBanner
+      title="No te pierdas nuestra tienda online"
+      description="Descubre nuestras ofertas y packs para empezar ya tu propio huerto!"
+      backgroundUrl="/guy-gardening.jpg"
+      buttonText="Comprar"
+    />
+    <Cards
+      title="Últimas noticias"
+      description="No te pierdas nuestros consejos y reflexiones..."
+      type="blog"
+    />
 
     <Footer />
   </body>

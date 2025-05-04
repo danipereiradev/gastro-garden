@@ -2,6 +2,50 @@
 const today = new Date();
 ---
 
-<footer class="flex justify-center align-center bg-black text-white">
+<!-- <footer class="flex justify-center align-center bg-black text-white">
   &copy; {today.getFullYear()} Gastro Garden | Todos los derechos reservados.
+</footer> -->
+<footer class="bg-mint text-garden-drygreen mt-12 py-12">
+  <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-8 md:grid-cols-3">
+    <!-- Columna 1: Logo y descripción -->
+    <div>
+      <img class="mb-4" width={150} height={200} src={'/gastro-garden-logo.png'} alt="" />
+      <p class="text-sm leading-relaxed">
+        Cultiva tu bienestar. Cursos, ideas y productos para acercarte a la tierra desde casa.
+      </p>
+    </div>
+
+    <!-- Columna 2: Enlaces -->
+    <div>
+      <h3 class="mb-3 text-lg font-semibold">Enlaces</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/" class="hover:underline">Inicio</a></li>
+        <li><a href="/cursos" class="hover:underline">Cursos</a></li>
+        <li><a href="/blog" class="hover:underline">Blog</a></li>
+        <li><a href="/tienda" class="hover:underline">Tienda</a></li>
+        <li><a href="/contacto" class="hover:underline">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Newsletter -->
+    <div>
+      <h3 class="mb-3 text-lg font-semibold">Newsletter</h3>
+      <p class="mb-4 text-sm">Recibe consejos, novedades y semillas de inspiración 🌱</p>
+      <form class="flex flex-col gap-2 sm:flex-row">
+        <input
+          type="email"
+          placeholder="Tu email"
+          class="w-full flex-1 rounded-md px-3 py-2 text-black sm:w-auto"
+        />
+        <button
+          class="bg-garden-mint hover:bg-garden-drygreen rounded-md px-4 py-2 text-black transition"
+        >
+          Suscribirme
+        </button>
+      </form>
+    </div>
+  </div>
 </footer>
+<div class="align-center flex justify-center bg-black text-white">
+  &copy; {today.getFullYear()} Gastro Garden | Todos los derechos reservados.
+</div>

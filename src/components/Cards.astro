@@ -1,29 +1,59 @@
-<section class="flex flex-col justify-center align-center w-full h-[calc(100vh_-_121px)] p-8 gap-4">
-  <h3 class="text-center">¿Que podemos ofrecerte?</h3>
-  <div class="flex w-full justify-center align-center gap-8 my-8">
-    <article class="shadow-xl w-1/3 rounded-md flex flex-col justify-between text-center">
-      <img class="w-full" src="/garden.png" alt="" />
-      <div class="flex flex-col p-8">
-        <h4>Card 1</h4>
-        <p>Lorem ipsum blablabla</p>
-        <button>saber más</button>
-      </div>
-    </article>
-    <article class="shadow-xl w-1/3 rounded-md flex flex-col justify-between text-center">
-      <img class="w-full" src="/garden.png" alt="" />
-      <div class="flex flex-col p-8">
-        <h4>Card 1</h4>
-        <p>Lorem ipsum blablabla</p>
-        <button>saber más</button>
-      </div>
-    </article>
-    <article class="shadow-xl w-1/3 rounded-md flex flex-col justify-between text-center">
-      <img class="w-full" src="/garden.png" alt="" />
-      <div class="flex flex-col p-8">
-        <h4>Card 1</h4>
-        <p>Lorem ipsum blablabla</p>
-        <button>saber más</button>
-      </div>
-    </article>
+---
+import Card from './Card.astro';
+
+enum cardType {
+  servicios = 'servicios',
+  blog = 'blog',
+}
+
+type CardProps = {
+  title: string;
+  description: string;
+  type: cardType;
+};
+
+const { title, description, type } = Astro.props as CardProps;
+---
+
+<section
+  class="flex min-h-screen w-full max-w-screen-xl flex-col items-center justify-center gap-4 place-self-center text-center p-8 md:p-0"
+>
+<h3 class="text-3xl md:text-4xl " >{title}</h3>
+  <p>{description}</p>
+
+  <div class="flex md:flex-row flex-col md:items-center justify-center gap-8 w-full">
+    {
+      type === cardType.servicios && (
+        <>
+          <Card
+            title="Curso/servicio 1"
+            description="Descripción del servicio/curso 1 (descripción corta)"
+            imageUrl="/garden.png"
+          />
+          <Card
+            title="Curso/servicio 2"
+            description="Descripción del servicio/curso 2 (descripción corta)"
+            imageUrl="/garden.png"
+          />
+          <Card
+            title="Curso/servicio 3"
+            description="Descripción del servicio/curso 3 (descripción corta)"
+            imageUrl="/garden.png"
+          />
+        </>
+      )
+    }
+
+    {
+      type === cardType.blog && (
+        <>
+          <Card
+            title="Primera entrada blog"
+            description="Avance corto de la entrada del blog"
+            imageUrl="/guy-gardening.jpg"
+          />
+        </>
+      )
+    }
   </div>
 </section>
